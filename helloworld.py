@@ -49,8 +49,8 @@ replies=all
 class CustomStreamListener(tweepy.StreamListener):
     def on_status(self, s):
     	sn=s.user.screen_name
-    	m="@%s Be believing, be happy, don’t get discouraged. Things will work out. Gordon B. Hinckley" % (sn)
-    	api.update_status(m,in_reply_to_status_id = s.id)
+    	m="@%s" % (sn)
+    	api.update_status(m+'Be believing, be happy, don’t get discouraged. Things will work out. Gordon B. Hinckley',in_reply_to_status_id = s.id)
     	
     def on_error(self, status_code):
         print >> sys.stderr, 'Encountered error with status code:', status_code
